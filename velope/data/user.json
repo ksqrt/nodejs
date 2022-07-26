@@ -10,5 +10,9 @@
 	"newfuckuser": {
 		"password": "newpass2",
 		"name": "fuck"
+	},
+	"newuser23": {
+		"password": "newpass2",
+		"name": "fuck"
 	}
 }

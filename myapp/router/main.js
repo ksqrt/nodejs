@@ -1,398 +1,38 @@
-module.exports = function (app, fs) {
-  app.get("/", (req, res) => {
-    res.send("Hello World!");
+// 업로드
+module.exports = function (app, fs, upload) {
+  // ---------------홈------------
+  // ---------------리스트출럭---------
+  app.get("/list", function (req, res) {
+    fs.readFile(
+      __dirname + "/../data/" + "user.json",
+      "utf8",
+      function (err, data) {
+        console.log(data);
+        res.end(data);
+      }
+    );
   });
-  //   --------------------유저추가
-
-  app.post("/addUser/:username", function (req, res) {
+  //   -------------------데이터추가
+  app.post("/:username", function (req, res) {
     var result = {};
     var username = req.params.username;
 
     // CHECK REQ VALIDITY
-    if (!req.body["password"] || !req.body["name"]) {
-      result["success"] = 0;
-      result["error"] = "invalid request";
+    if (!req.body["direction"]) {
+      result["Result"] = "NOK";
+      // result["error"] = "invalid request";
       res.json(result);
       return;
     }
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
+    // json file 저장 업로드
+    var jsonData = JSON.stringify(req.body);
 
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
+    fs.writeFile(__dirname + "/../data/test.json", jsonData, function (err) {
+      if (err) {
+        console.log(err);
       }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
     });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
 
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
-    app.post("/addUser/:username", function (req, res) {
-      var result = {};
-      var username = req.params.username;
-
-      // CHECK REQ VALIDITY
-      if (!req.body["password"] || !req.body["name"]) {
-        result["success"] = 0;
-        result["error"] = "invalid request";
-        res.json(result);
-        return;
-      }
-
-      // LOAD DATA & CHECK DUPLICATION
-      fs.readFile(
-        __dirname + "/../data/user.json",
-        "utf8",
-        function (err, data) {
-          var users = JSON.parse(data);
-          if (users[username]) {
-            // DUPLICATION FOUND
-            result["success"] = 0;
-            result["error"] = "duplicate";
-            res.json(result);
-            return;
-          }
-
-          // ADD TO DATA
-          users[username] = req.body;
-
-          // SAVE DATA
-          fs.writeFile(
-            __dirname + "/../data/user.json",
-            JSON.stringify(users, null, "\t"),
-            "utf8",
-            function (err, data) {
-              result = { success: 1 };
-              res.json(result);
-            }
-          );
-        }
-      );
-    });
     // LOAD DATA & CHECK DUPLICATION
     fs.readFile(__dirname + "/../data/user.json", "utf8", function (err, data) {
       var users = JSON.parse(data);
@@ -404,6 +44,7 @@ module.exports = function (app, fs) {
         return;
       }
 
+      let today = new Date();
       // ADD TO DATA
       users[username] = req.body;
 
@@ -413,10 +54,17 @@ module.exports = function (app, fs) {
         JSON.stringify(users, null, "\t"),
         "utf8",
         function (err, data) {
-          result = { success: 1 };
+          //   result = { success: 1 };
+          result["direction"] = "RES";
+          result["Command"] = "RESP";
+          result["R_STATUS"] = true;
+          //  응답 json 데이터를 전송
           res.json(result);
         }
       );
+      // json 데이터 저장
     });
   });
+
+  //   ------파일업로드
 };

@@ -1,0 +1,38 @@
+{
+	"t52es1541323236": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	},
+	"t52es15413222": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	},
+	"t52es15444222": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	},
+	"t52es22": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	},
+	"t52e563s222": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	},
+	"t52e563s22222": {
+		"direction": "REQ",
+		"Command": "TRIG",
+		"TRIGGER_ID": 1,
+		"LOG_ID": 1
+	}
+}
