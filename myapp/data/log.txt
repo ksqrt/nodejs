@@ -1,0 +1,2 @@
+Result : OK 2022-07-27 10:25:29{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-27 10:25:29{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
