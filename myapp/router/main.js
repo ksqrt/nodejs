@@ -2,6 +2,8 @@
 module.exports = function (app, fs, upload) {
   // ---------------홈------------
   // ---------------리스트출럭---------
+  let today = new Date();
+
   app.get("/list", function (req, res) {
     fs.readFile(
       __dirname + "/../data/" + "user.json",
@@ -24,14 +26,6 @@ module.exports = function (app, fs, upload) {
       res.json(result);
       return;
     }
-    // json file 저장 업로드
-    var jsonData = JSON.stringify(req.body);
-
-    fs.writeFile(__dirname + "/../data/test.json", jsonData, function (err) {
-      if (err) {
-        console.log(err);
-      }
-    });
 
     // LOAD DATA & CHECK DUPLICATION
     fs.readFile(__dirname + "/../data/user.json", "utf8", function (err, data) {
@@ -44,10 +38,22 @@ module.exports = function (app, fs, upload) {
         return;
       }
 
-      let today = new Date();
+      // fs.writeFile(
+      //   __dirname + "/../data/user.json",
+      //   JSON.stringify(req.body),
+      //   (err) => {
+      //     if (err) console.log(err);
+      //     else {
+      //       console.log("File written successfully\n");
+      //       console.log("The written has the following contents:");
+      //       console.log(fs.readFileSync("test.txt", "utf8"));
+      //     }
+      //   }
+      // );
+
       // ADD TO DATA
       users[username] = req.body;
-
+      users[username]["data"] = today;
       // SAVE DATA
       fs.writeFile(
         __dirname + "/../data/user.json",
@@ -55,6 +61,7 @@ module.exports = function (app, fs, upload) {
         "utf8",
         function (err, data) {
           //   result = { success: 1 };
+          result["time"] = today.toLocaleString();
           result["direction"] = "RES";
           result["Command"] = "RESP";
           result["R_STATUS"] = true;
