@@ -29,7 +29,6 @@ module.exports = function (app, fs, upload) {
     );
   }
   // ---------------로그출럭---------
-  let today = dateFormat(new Date());
 
   app.get("/log", function (req, res) {
     fs.readFile(
@@ -55,6 +54,7 @@ module.exports = function (app, fs, upload) {
       // result["error"] = "invalid request";
       res.json(result);
       // 로그기록남기기
+      let today = dateFormat(new Date());
       fs.appendFile(
         __dirname + "/../data/log.txt",
         "Result : NOK " + today + JSON.stringify(req.body) + "\n",
@@ -70,6 +70,7 @@ module.exports = function (app, fs, upload) {
       var users = JSON.parse(data);
 
       // 로그 기록 남기기
+      let today = dateFormat(new Date());
       fs.appendFile(
         __dirname + "/../data/log.txt",
         "Result : OK " + today + JSON.stringify(req.body) + "\n",

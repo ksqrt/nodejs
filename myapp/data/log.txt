@@ -1,2 +1,9 @@
 Result : OK 2022-07-27 10:25:29{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
 Result : OK 2022-07-27 10:25:29{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-27 10:32:10{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : NOK 2022-07-27 10:32:10{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
+Result : NOK 2022-07-27 10:32:10{"Direction":"REQ"}
+Result : OK 2022-07-27 10:32:10{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-27 10:34:26{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-27 10:34:30{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-27 10:34:33{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}

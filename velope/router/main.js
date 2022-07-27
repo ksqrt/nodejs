@@ -1,6 +1,6 @@
 module.exports = function (app, fs) {
   var session = require("express-session");
-
+  // 미들웨어 세션
   app.use(
     session({
       secret: "@#@$MYSIGN#@$#$",
@@ -8,7 +8,7 @@ module.exports = function (app, fs) {
       saveUninitialized: true,
     })
   );
-
+  // 로그인기능
   app.get("/login/:username/:password", function (req, res) {
     var sess;
     sess = req.session;
@@ -38,6 +38,7 @@ module.exports = function (app, fs) {
       }
     });
   });
+  // 로그아웃기능
   app.get("/logout", function (req, res) {
     sess = req.session;
     if (sess.username) {
