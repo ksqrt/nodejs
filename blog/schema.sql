@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS chat;
+CREATE DATABASE chat;
+USE chat;
+
+CREATE TABLE users (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(255),
+  PRIMARY KEY(id)
+);
