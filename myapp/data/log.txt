@@ -7,3 +7,15 @@ Result : OK 2022-07-27 10:32:10{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":
 Result : OK 2022-07-27 10:34:26{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
 Result : OK 2022-07-27 10:34:30{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
 Result : OK 2022-07-27 10:34:33{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:36:43{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:37:02{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:37:03{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : NOK 2022-07-28 13:38:03{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:42:37{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:42:49{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:42:53{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 13:43:18{"Direction":"REQ","Command":"TRIG","LOG_ID":1}
+Result : NOK 2022-07-28 13:43:24{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
+Result : NOK 2022-07-28 13:43:28{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 14:27:51{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 14:28:12{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
