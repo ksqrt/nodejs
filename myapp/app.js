@@ -19,13 +19,13 @@ app.listen(PORT, () => {
 app.use(express.static("public"));
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(
-  session({
-    secret: "@#@$MYSIGN#@$#$",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
+// app.use(bodyParser.urlencoded());
+// app.use(
+//   session({
+//     secret: "@#@$MYSIGN#@$#$",
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
 
 var router = require("./router/main")(app, fs);

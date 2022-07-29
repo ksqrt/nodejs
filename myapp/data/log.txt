@@ -19,3 +19,9 @@ Result : NOK 2022-07-28 13:43:24{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
 Result : NOK 2022-07-28 13:43:28{"Direction":"REQ","TRIGGER_ID":1,"LOG_ID":1}
 Result : OK 2022-07-28 14:27:51{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
 Result : OK 2022-07-28 14:28:12{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 15:56:19{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 15:56:39{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 16:04:13{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 16:08:34{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-28 16:53:08{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
+Result : OK 2022-07-29 09:19:25{"Direction":"REQ","Command":"TRIG","TRIGGER_ID":1,"LOG_ID":1}
