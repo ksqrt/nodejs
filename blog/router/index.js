@@ -31,6 +31,18 @@ router.get("/serverSide/:id", (req, res) => {
   });
 });
 
+router.get("/serverSide", (req, res) => {
+  var sql = `SELECT * FROM user`;
+  db.query(sql, (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(rows);
+      res.json(rows);
+    }
+  });
+});
+
 router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../react-project/build/index.html"));
 });
