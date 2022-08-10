@@ -16,10 +16,16 @@ export default function Hello() {
       });
     }
   }, [user]);
-
+  // console.log(typeof user);
+  // const obj = JSON.stringify(user[0]);
+  // console.log(typeof user);
+  // document.getElementById("user").innerHTML = obj.id + ", " + obj.email;
   console.log(user);
-
-  var db = JSON.stringify(user);
-  console.log(typeof db);
-  return <div>{JSON.stringify(user)}</div>;
+  // const { id, email, department } = user;
+  return (
+    <div>
+      <script>document.getElementById()</script>
+      {JSON.stringify(user)}
+    </div>
+  );
 }
