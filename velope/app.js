@@ -1,4 +1,5 @@
 var express = require("express");
+const path = require("path");
 var app = express();
 var bodyParser = require("body-parser");
 var session = require("express-session");
@@ -13,6 +14,7 @@ var server = app.listen(3000, function () {
 });
 
 app.use(express.static("public"));
+// app.use("/react", express.static(path.join(__dirname, "react-project/build")));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -24,4 +26,6 @@ app.use(
   })
 );
 
-var router = require("./router/main")(app, fs);
+const mainrouter = require("./router/main")(app, fs);
+
+app.use("/", mainrouter);

@@ -1,6 +1,6 @@
 module.exports = function (app, fs) {
   var session = require("express-session");
-
+  // 미들웨어 세션
   app.use(
     session({
       secret: "@#@$MYSIGN#@$#$",
@@ -9,6 +9,12 @@ module.exports = function (app, fs) {
     })
   );
 
+  // app.get("/test1", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "/react-project/build/index.html"));
+  // });
+
+  // 테스트 html 페이지
+  // 로그인기능
   app.get("/login/:username/:password", function (req, res) {
     var sess;
     sess = req.session;
@@ -38,6 +44,7 @@ module.exports = function (app, fs) {
       }
     });
   });
+  // 로그아웃기능
   app.get("/logout", function (req, res) {
     sess = req.session;
     if (sess.username) {
