@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Show from "./Show";
 
 export default function Hello() {
   // 데이터를 받을 스테이트
@@ -16,16 +17,24 @@ export default function Hello() {
       });
     }
   }, [user]);
-  // console.log(typeof user);
-  // const obj = JSON.stringify(user[0]);
-  // console.log(typeof user);
-  // document.getElementById("user").innerHTML = obj.id + ", " + obj.email;
+
   console.log(user);
-  // const { id, email, department } = user;
+
   return (
     <div>
-      <script>document.getElementById()</script>
-      {JSON.stringify(user)}
+      {user.id === 0
+        ? "Loading..."
+        : user.map((use) => {
+            console.log(use);
+            return (
+              <Show
+                key={use.id}
+                id={use.id}
+                email={use.email}
+                department={use.department}
+              ></Show>
+            );
+          })}
     </div>
   );
 }
