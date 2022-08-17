@@ -1,31 +1,23 @@
-var express = require("express");
-var app = express();
-var bodyParser = require("body-parser");
-var session = require("express-session");
-var fs = require("fs");
+const express = require("express");
+const app = express();
+const path = require("path");
+const cors = require("cors");
+// cors미들웨어 사용
+app.use(
+  cors({
+    origin: "*", // 모든 출처 허용 옵션. true 를 써도 된다.
+  })
+);
 
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
-app.engine("html", require("ejs").renderFile);
+// 라우터 정의
+const index = require("./router/index");
+app.use("/", index);
+const topic = require("./router/topic");
+app.use("/topic", topic);
+// 정적 디랙토리 정의
+app.use(express.static(path.join(__dirname, "react-project/build")));
 
-const PORT = process.env.PORT || 3000;
-// .env 파일 내의 PORT 값을 가져오고 없다면 3000으로 설정
-// 위 예시의 3000번 포트가 사용 중일 경우 다른 포트 사용 가능
-
-app.listen(PORT, () => {
-  console.log(`✅ Listening on 'http://localhost:${PORT}'`);
+// 서버 가동
+var server = app.listen(3001, function () {
+  console.log("Express server has started on port 3001");
 });
-
-app.use(express.static("public"));
-
-app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded());
-// app.use(
-//   session({
-//     secret: "@#@$MYSIGN#@$#$",
-//     resave: false,
-//     saveUninitialized: true,
-//   })
-// );
-
-var router = require("./router/main")(app, fs);
